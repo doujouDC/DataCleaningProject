@@ -7,14 +7,14 @@ library(tidyverse) # activate the tidyverse
 # I had to go to the orginial webpage to get all of the data, which was very confusing
 
 # Create all the data frames
-features <- read.table("data/UCI HAR Dataset/features.txt", col.names = c("n","functions"))
-activities <- read.table("data/UCI HAR Dataset/activity_labels.txt", col.names = c("code", "activity"))
-subject_test <- read.table("data/UCI HAR Dataset/test/subject_id_test.txt", col.names = "subject")
-x_test <- read.table("data/UCI HAR Dataset/test/X_test.txt", col.names = features$functions)
-y_test <- read.table("data/UCI HAR Dataset/test/y_test.txt", col.names = "code")
-subject_train <- read.table("data/UCI HAR Dataset/train/subject_train.txt", col.names = "subject")
-x_train <- read.table("data/UCI HAR Dataset/train/X_train.txt", col.names = features$functions)
-y_train <- read.table("data/UCI HAR Dataset/train/y_train.txt", col.names = "code")
+features <- read.table("data/features.txt", col.names = c("n","functions"))
+activities <- read.table("data/activity_labels.txt", col.names = c("code", "activity"))
+subject_test <- read.table("data/test/subject_test.txt", col.names = "subject")
+x_test <- read.table("data/test/X_test.txt", col.names = features$functions)
+y_test <- read.table("data/test/y_test.txt", col.names = "code")
+subject_train <- read.table("data/train/subject_train.txt", col.names = "subject")
+x_train <- read.table("data/train/X_train.txt", col.names = features$functions)
+y_train <- read.table("data/train/y_train.txt", col.names = "code")
 
 # Merge all of the dataset together
 
@@ -46,12 +46,9 @@ CompleteDataTidyMean$code <- activities[CompleteDataTidyMean$code, 2]
 
 
 FinalData <- CompleteDataTidyMean %>% 
-  group_by(subject, code) %>% exit
+  group_by(subject, code) %>%
   select(-sdCompleteData)
-<<<<<<< HEAD:run_analysis.R
 
 # Write out the final version of the file
 
-# write_csv(FinalData, "data_output/FinalData.csv")
-=======
->>>>>>> parent of 4cb6d2d... Final version of my script:run_analysisl.R
+write_csv(FinalData, "data_output/FinalData.csv")
