@@ -6,15 +6,23 @@ library(tidyverse) # activate the tidyverse
 
 # I had to go to the orginial webpage to get all of the data, which was very confusing
 
-# Create all the data frames
+# Create all the data frames and check the dataframe structure
 features <- read.table("data/features.txt", col.names = c("n","functions"))
+str(features)
 activities <- read.table("data/activity_labels.txt", col.names = c("code", "activity"))
+str(activities)
 subject_test <- read.table("data/test/subject_test.txt", col.names = "subject")
+str(subject_test)
 x_test <- read.table("data/test/X_test.txt", col.names = features$functions)
+str(x_test)
 y_test <- read.table("data/test/y_test.txt", col.names = "code")
+str(y_test)
 subject_train <- read.table("data/train/subject_train.txt", col.names = "subject")
+str(subject_train)
 x_train <- read.table("data/train/X_train.txt", col.names = features$functions)
+str(x_train)
 y_train <- read.table("data/train/y_train.txt", col.names = "code")
+str(y_train)
 
 # Merge all of the dataset together
 

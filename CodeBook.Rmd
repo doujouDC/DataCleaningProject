@@ -15,48 +15,43 @@ knitr::opts_chunk$set(echo = TRUE)
 # Introduction
 The run_analysis.R script performs the data preparation and then followed by the steps outlined below.
 
-Download the dataset
-Dataset downloaded and extracted under the folder called UCI HAR Dataset
+# Download the dataset
+1. I downloaded the data using the following [link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+2. I created the following folders inside my project folder: (1) data, (2) data_output, and (3) documents
+2. I extracted the data and the moved the data to the **data** folder
 
-Assign each data to variables
-features <- features.txt : 561 rows, 2 columns
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
-activities <- activity_labels.txt : 6 rows, 2 columns
-List of activities performed when the corresponding measurements were taken and its codes (labels)
-subject_test <- test/subject_test.txt : 2947 rows, 1 column
-contains test data of 9/30 volunteer test subjects being observed
-x_test <- test/X_test.txt : 2947 rows, 561 columns
-contains recorded features test data
-y_test <- test/y_test.txt : 2947 rows, 1 columns
-contains test data of activities’code labels
-subject_train <- test/subject_train.txt : 7352 rows, 1 column
-contains train data of 21/30 volunteer subjects being observed
-x_train <- test/X_train.txt : 7352 rows, 561 columns
-contains recorded features train data
-y_train <- test/y_train.txt : 7352 rows, 1 columns
-contains train data of activities’code labels
+# Created the data frames using read.table
 
-Merges the training and the test sets to create one data set
-X (10299 rows, 561 columns) is created by merging x_train and x_test using rbind() function
-Y (10299 rows, 1 column) is created by merging y_train and y_test using rbind() function
-Subject (10299 rows, 1 column) is created by merging subject_train and subject_test using rbind() function
-Merged_Data (10299 rows, 563 column) is created by merging Subject, Y and X using cbind() function
+Name of DataFrame | Data Source | Structure Information | Source Information
+------------------| ------------ | --------------------
+features | features.txt  | 561 obs. of  2 variables | from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ
+subject_test | subject_test.txt | 2947 obs. of  1 variable | Test data of 9/30 volunteer test subjects being observed
+x_test | X_test.txt | 2947 obs. of  561 variables | Recorded features test data
+y_test | y_test.txt | 2947 obs. of  1 variable | Test data of activities’code labels
+subject_train | subject_train.txt | 7352 obs. of  1 variable | Training data of 21/30 volunteer subjects being observed
+x_train | X_train.txt | 7352 obs. of  561 variables | Recorded features train data
+y_train | y_train.txt | 7352 obs. of  1 variable | Train data of activities’code labels
 
-Extracts only the measurements on the mean and standard deviation for each measurement
-TidyData (10299 rows, 88 columns) is created by subsetting Merged_Data, selecting only columns: subject, code and the measurements on the mean and standard deviation (std) for each measurement
+# Merge all of the dataset together
 
-Uses descriptive activity names to name the activities in the data set
-Entire numbers in code column of the TidyData replaced with corresponding activity taken from second column of the activities variable
+* Xdata (10299 obs of 2 columns) is created by merging x_train and x_test using rbind() function
+* Ydata (10299 obs of 1 column) is created by merging y_train and y_test using rbind() function
+* SubjectData (10299 obs of 1 column) is created by merging subject_train and subject_test using rbind() function
+* MergedData (10299 obs of 563 columns) is created by merging Subject, Y and X using cbind() function
 
-Appropriately labels the data set with descriptive variable names
-code column in TidyData renamed into activities
-All Acc in column’s name replaced by Accelerometer
-All Gyro in column’s name replaced by Gyroscope
-All BodyBody in column’s name replaced by Body
-All Mag in column’s name replaced by Magnitude
-All start with character f in column’s name replaced by Frequency
-All start with character t in column’s name replaced by Time
+# Make the data tidy (long)
+* Activated the tidyverse and used gather() to make the data into a tidy-friendly version
 
-From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
-FinalData (180 rows, 88 columns) is created by sumarizing TidyData taking the means of each variable for each activity and each subject, after groupped by subject and activity.
-Export FinalData into FinalData.txt file.
+# Extracts only the measurements on the mean and standard deviation for each measurement
+* Used pipes and the TidyVerse to create the following new dataframe: CompleteDataTidyMean
+* Used mutate to create two new columns: the mean (mean), and the standard deviation (sd)
+* Used select to only include the columns I was interested in
+
+# Uses descriptive activity names to name the activities in the data set
+* Using [], I was able to replace the values in my new data frame with the corresponding activity taken from second column of the activities variable
+
+# Creates a second, independent tidy data set with the average of each variable for each activity and each subject
+* Using group_by() and select() I was able to create a final version of the dataset
+
+Write out the final version of the file
+* Using write.csv I was able to save a final version of the file in the data_output folder
