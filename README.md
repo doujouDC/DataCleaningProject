@@ -1,10 +1,3 @@
----
-output:
-  word_document: default
-  pdf_document: default
-  html_document: default
----
-
 # General Information
 * This repository was created as part of the Getting and Cleaning Data course project. It has the instructions on how to run analysis on Human Activity recognition dataset.
 * This DATACLEANINGPROJECT readme.txt file was generated on 2019-10-09 by Douglas Joubert
