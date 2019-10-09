@@ -1,9 +1,14 @@
 ---
-output:
-  word_document: default
-  pdf_document: default
-  html_document: default
+title: "Data Cleaning Project Read Me file"
+author: "Doug Joubert"
+date: "October 9, 2019"
+output: html_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 This DATACLEANINGPROJECT readme.txt file was generated on 2019-10-09 by Douglas Joubert
 
 # General Information
