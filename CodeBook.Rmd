@@ -2,10 +2,12 @@
 title: "Data Cleaning Project Code Book"
 author: "Doug Joubert"
 date: "October 8, 2019"
-output: 
-  html_document: 
-    fig_caption: yes
-    toc: yes
+output:
+  md_document:
+    variant: markdown_github
+  # html_document: 
+  #   fig_caption: yes
+  #   toc: yes
 ---
 
 ```{r setup, include=FALSE}
