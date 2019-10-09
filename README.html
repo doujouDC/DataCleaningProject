@@ -183,42 +183,59 @@ summary {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#general-information">General Information</a><ul>
+<li><a href="#author-information">Author Information</a></li>
+<li><a href="#title-of-dataset">Title of Dataset:</a><ul>
+<li><a href="#data-set-information">Data set information</a></li>
+<li><a href="#date-of-data-collection">Date of data collection</a></li>
+<li><a href="#attribute-information">Attribute Information:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#code-style-and-data-used">Code style and Data used</a><ul>
+<li><a href="#sharingaccess-information">SHARING/ACCESS INFORMATION</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
 
 <p>This DATACLEANINGPROJECT readme.txt file was generated on 2019-10-09 by Douglas Joubert</p>
 <div id="general-information" class="section level1">
-<h1><span class="header-section-number">1</span> General Information</h1>
+<h1>General Information</h1>
 <ul>
 <li>This repository was created as part of the Getting and Cleaning Data course project. It has the instructions on how to run analysis on Human Activity recognition dataset.</li>
 </ul>
 <div id="author-information" class="section level2">
-<h2><span class="header-section-number">1.1</span> Author Information</h2>
+<h2>Author Information</h2>
 <p>Creator: Douglas Joubert</p>
 </div>
 <div id="title-of-dataset" class="section level2">
-<h2><span class="header-section-number">1.2</span> Title of Dataset:</h2>
+<h2>Title of Dataset:</h2>
 <div id="data-set-information" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Data set information</h3>
-<p>The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. They performed a protocol of activities composed of six basic activities: three static postures (standing, sitting, lying) and three dynamic activities (walking, walking downstairs and walking upstairs). The experiment also included postural transitions that occurred between the static postures. These are: stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and lie-to-stand. All the participants were wearing a smartphone (Samsung Galaxy S II) on the waist during the experiment execution. We captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope of the device. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data <span class="citation">[@Anguita2013]</span>. The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.</p>
+<h3>Data set information</h3>
+<p>The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. They performed a protocol of activities composed of six basic activities: three static postures (standing, sitting, lying) and three dynamic activities (walking, walking downstairs and walking upstairs). The experiment also included postural transitions that occurred between the static postures. These are: stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and lie-to-stand. All the participants were wearing a smartphone (Samsung Galaxy S II) on the waist during the experiment execution. We captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope of the device. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data (Anguita, 2013).</p>
+<p>The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain (Anguita, 2013).</p>
 <p>Check the README.md for further details about this dataset.</p>
 </div>
 <div id="date-of-data-collection" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> Date of data collection</h3>
+<h3>Date of data collection</h3>
 <p>2012-12-10, more information available from Data Set Description <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#">file</a>.</p>
 </div>
 <div id="attribute-information" class="section level3">
-<h3><span class="header-section-number">1.2.3</span> Attribute Information:</h3>
+<h3>Attribute Information:</h3>
 <p>For each record in the dataset it is provided: * Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. * Triaxial Angular velocity from the gyroscope. * A 561-feature vector with time and frequency domain variables. * Its activity label. * An identifier of the subject who carried out the experiment.</p>
 </div>
 </div>
 </div>
 <div id="code-style-and-data-used" class="section level1">
-<h1><span class="header-section-number">2</span> Code style and Data used</h1>
+<h1>Code style and Data used</h1>
 <ul>
 <li>This project was written in <em>R version 3.5.1 (2018-07-02))</em></li>
 <li>Full description of the data used and analysis performed is found in the CodeBook.md or Codebook.rmd files.</li>
 </ul>
 <div id="sharingaccess-information" class="section level2">
-<h2><span class="header-section-number">2.1</span> SHARING/ACCESS INFORMATION</h2>
+<h2>SHARING/ACCESS INFORMATION</h2>
 <p>Licenses/restrictions placed on the data, or limitations of reuse:</p>
 <p>Recommended citation for the data:</p>
 <p>Citation for and links to publications that cite or use the data:</p>
@@ -263,6 +280,12 @@ summary {
 <p>Missing data codes:</p>
 <p>Specialized formats or other abbreviations used:</p>
 </div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<ol style="list-style-type: decimal">
+<li>Anguita, D., Ghio, A., Oneto, L., Parra, X., &amp; Reyes-Ortiz, J. L. (2013). Human Activity Recognition Using Smartphones Data Set. Retrieved October 4, 2019, from <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#" class="uri">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#</a></li>
+</ol>
 </div>
 
 
