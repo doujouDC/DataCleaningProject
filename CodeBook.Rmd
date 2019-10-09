@@ -53,5 +53,5 @@ y_train | y_train.txt | 7352 obs. of  1 variable | Train data of activities’co
 # Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 * Using group_by() and select() I was able to create a final version of the dataset
 
-Write out the final version of the file
+# Write out the final version of the file
 * Using write.csv I was able to save a final version of the file in the data_output folder
