@@ -1,0 +1,254 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Data Cleaning Project Read Me file},
+            pdfauthor={Doug Joubert},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Data Cleaning Project Read Me file}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Doug Joubert}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{October 9, 2019}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+This DATACLEANINGPROJECT readme.txt file was generated on 2019-10-09 by
+Douglas Joubert
+
+\section{General Information}\label{general-information}
+
+\begin{itemize}
+\tightlist
+\item
+  This repository was created as part of the Getting and Cleaning Data
+  course project. It has the instructions on how to run analysis on
+  Human Activity recognition dataset.
+\end{itemize}
+
+\subsection{Author Information}\label{author-information}
+
+Creator: Douglas Joubert
+
+\subsection{Title of Dataset:}\label{title-of-dataset}
+
+\subsubsection{Data set information}\label{data-set-information}
+
+The experiments were carried out with a group of 30 volunteers within an
+age bracket of 19-48 years. They performed a protocol of activities
+composed of six basic activities: three static postures (standing,
+sitting, lying) and three dynamic activities (walking, walking
+downstairs and walking upstairs). The experiment also included postural
+transitions that occurred between the static postures. These are:
+stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and
+lie-to-stand. All the participants were wearing a smartphone (Samsung
+Galaxy S II) on the waist during the experiment execution. We captured
+3-axial linear acceleration and 3-axial angular velocity at a constant
+rate of 50Hz using the embedded accelerometer and gyroscope of the
+device. The experiments were video-recorded to label the data manually.
+The obtained dataset was randomly partitioned into two sets, where 70\%
+of the volunteers was selected for generating the training data and 30\%
+the test data {[}@Anguita{]}.
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by
+applying noise filters and then sampled in fixed-width sliding windows
+of 2.56 sec and 50\% overlap (128 readings/window). The sensor
+acceleration signal, which has gravitational and body motion components,
+was separated using a Butterworth low-pass filter into body acceleration
+and gravity. The gravitational force is assumed to have only low
+frequency components, therefore a filter with 0.3 Hz cutoff frequency
+was used. From each window, a vector of features was obtained by
+calculating variables from the time and frequency domain (Anguita,
+2013).
+
+Check the README.md for further details about this dataset.
+
+\subsubsection{Date of data collection}\label{date-of-data-collection}
+
+2012-12-10, more information available from Data Set Description
+\href{http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones\#}{file}.
+
+\subsubsection{Attribute Information:}\label{attribute-information}
+
+For each record in the dataset it is provided: * Triaxial acceleration
+from the accelerometer (total acceleration) and the estimated body
+acceleration. * Triaxial Angular velocity from the gyroscope. * A
+561-feature vector with time and frequency domain variables. * Its
+activity label. * An identifier of the subject who carried out the
+experiment.
+
+\section{Code style and Data used}\label{code-style-and-data-used}
+
+\begin{itemize}
+\tightlist
+\item
+  This project was written in \emph{R version 3.5.1 (2018-07-02))}
+\item
+  Full description of the data used and analysis performed is found in
+  the CodeBook.md or Codebook.rmd files.
+\end{itemize}
+
+\section{References}\label{references}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Anguita, D., Ghio, A., Oneto, L., Parra, X., \& Reyes-Ortiz, J. L.
+  (2013). Human Activity Recognition Using Smartphones Data Set.
+  Retrieved October 4, 2019, from
+  \url{http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones\#}
+\end{enumerate}
+
+\subsection{SHARING/ACCESS INFORMATION}\label{sharingaccess-information}
+
+Licenses/restrictions placed on the data, or limitations of reuse:
+
+Recommended citation for the data:
+
+Citation for and links to publications that cite or use the data:
+
+Links to other publicly accessible locations of the data:
+
+Links/relationships to ancillary or related data sets:
+
+\begin{longtable}[]{@{}l@{}}
+\toprule
+DATA \& FILE OVERVIEW\tabularnewline
+\bottomrule
+\end{longtable}
+
+File list (filenames, directory structure (for zipped files) and brief
+description of all data files):
+
+Relationship between files, if important for context:
+
+Additional related data collected that was not included in the current
+data package:
+
+If data was derived from another source, list source:
+
+If there are there multiple versions of the dataset, list the file
+updated, when and why update was made:
+
+\begin{longtable}[]{@{}l@{}}
+\toprule
+METHODOLOGICAL INFORMATION\tabularnewline
+\bottomrule
+\end{longtable}
+
+Description of methods used for collection/generation of data:
+
+Methods for processing the data:
+
+Software- or Instrument-specific information needed to interpret the
+data, including software and hardware version numbers:
+
+Standards and calibration information, if appropriate:
+
+Environmental/experimental conditions:
+
+Describe any quality-assurance procedures performed on the data:
+
+People involved with sample collection, processing, analysis and/or
+submission:
+
+\begin{longtable}[]{@{}l@{}}
+\toprule
+DATA-SPECIFIC INFORMATION \tabularnewline
+\bottomrule
+\end{longtable}
+
+Number of variables:
+
+Number of cases/rows:
+
+Variable list, defining any abbreviations, units of measure, codes or
+symbols used:
+
+Missing data codes:
+
+Specialized formats or other abbreviations used:
+
+
+\end{document}
